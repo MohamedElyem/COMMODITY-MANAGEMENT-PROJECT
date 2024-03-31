@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon image -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <title>commodity management project</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1>commodity management project</h1>
+
+
+        <div class="note">Fill in the inputs bellow!</div>
+
+        <div class="input-group">
+            <input required="" type="text" autocomplete="off" class="input" id="title">
+            <label class="user-label">Title</label>
+        </div>
+        <div class="product-info">
+            <div class="input-group">
+                <input onkeyup="getTotal()" required="" type="number" autocomplete="off" class="input" id="price">
+                <label class="user-label">Price</label>
+            </div>
+            <div class="input-group">
+                <input onkeyup="getTotal()" required="" type="number" autocomplete="off" class="input" id="taxes">
+                <label class="user-label">Taxes</label>
+            </div>
+            <div class="input-group">
+                <input onkeyup="getTotal()" required="" type="number" autocomplete="off" class="input" id="ads">
+                <label class="user-label">Ads</label>
+            </div>
+            <div class="input-group">
+                <input onkeyup="getTotal()" required="" type="number" autocomplete="off" class="input" id="discount">
+                <label class="user-label">Discount</label>
+            </div>
+            <div class="totalInner" id="totalInner">Total : <span id="total"></span></div>
+        </div>
+
+
+
+        <div class="input-group" id="input-group">
+            <input required="" type="number" autocomplete="off" class="input" id="count">
+            <label class="user-label">Count</label>
+        </div>
+
+        <div class="input-group">
+            <input required="" type="text" autocomplete="off" class="input" id="category">
+            <label class="user-label">Category</label>
+        </div>
+
+
+        <div class="btnCreCan">
+            <button class="create" id="create">Create</button>
+            <button class="cancel" id="cancel" onclick="cancelUpdate()">Cancel</button>
+        </div>
+
+
+
+        <div class="search">
+            <div class="buttons">
+                <button onclick="getSearchMood(this.id)" class="search-title" id="searchByTitle">Search By
+                    Title</button>
+                <button onclick="getSearchMood(this.id)" class="search-category" id="searchByCategory">Search By
+                    Category</button>
+            </div>
+            <div class="input-group input-search">
+                <input onkeyup="searchData(this.value)" required="" type="text" autocomplete="off" class="input" id="search">
+                <label class="user-label" id="searchLabel">Search</label>
+            </div>
+        </div>
+
+
+
+        <button class="delete" id="deleteAll" onclick="deleteAll()">Delete All
+            <span id="proCount"></span></button>
+        <table>
+            <thead>
+                <tr>
+                    <td>id</td>
+                    <td>title</td>
+                    <td>price</td>
+                    <td>taxes</td>
+                    <td>ads</td>
+                    <td>discount</td>
+                    <td>total($)</td>
+                    <td>category</td>
+                    <td>update</td>
+                    <td>delete</td>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+
+            </tbody>
+
+        </table>
+
+
+        <div class="overlay" id="overlay" onclick="SuccessOff()">
+            <div class="success" id="success">
+                <p id="Success" class="m-0"><strong>Successfully!</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
